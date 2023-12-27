@@ -1,8 +1,7 @@
-# Carga de datos
-
+# Datos
 **/data/
 **/exports/
 **/node_modules/
 
-# Ignora archivos de configuración
+# Archivos de configuración
 config.js
