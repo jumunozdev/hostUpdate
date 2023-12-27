@@ -1,12 +1,12 @@
 const XLSX = require('xlsx');
-const departamentos = require('./colombia.json');
+const departamentos = require('./data/colombia.json');
 
-// Cargar el archivo Excel
-const workbook = XLSX.readFile('departamentos.xlsx');
+// Carga el archivo Excel
+const workbook = XLSX.readFile('./data/departamentos.xlsx');
 const sheetName = workbook.SheetNames[0];
 const worksheet = workbook.Sheets[sheetName];
 
-// Crear un objeto de índices para buscar más eficientemente
+// Crea un objeto de índices para buscar más eficientemente
 const indexMap = {};
 departamentos.forEach((data) => {
   data.ciudades.forEach((ciudad, index) => {
@@ -15,7 +15,7 @@ departamentos.forEach((data) => {
   });
 });
 
-// Iterar sobre las filas del archivo Excel
+// Itera sobre las filas del archivo Excel
 const range = XLSX.utils.decode_range(worksheet['!ref']);
 for (let rowNum = range.s.r + 1; rowNum <= range.e.r; rowNum++) {
   const ciudad = worksheet[XLSX.utils.encode_cell({ r: rowNum, c: 4 })].v; // Columna de ciudades
@@ -25,11 +25,11 @@ for (let rowNum = range.s.r + 1; rowNum <= range.e.r; rowNum++) {
   const coordenadas = indexMap[key];
 
   if (coordenadas) {
-    // Actualizar celdas en el archivo Excel
+    // Actualiza celdas en el archivo Excel
     worksheet[XLSX.utils.encode_cell({ r: rowNum, c: 2 })] = { v: coordenadas.latitud }; // Columna de latitudes
     worksheet[XLSX.utils.encode_cell({ r: rowNum, c: 3 })] = { v: coordenadas.longitud }; // Columna de longitudes
   }
 }
 
-// Guardar el archivo Excel actualizado
+// Guarda el archivo Excel actualizado
 XLSX.writeFile(workbook, 'departamentosNuevo.xlsx');

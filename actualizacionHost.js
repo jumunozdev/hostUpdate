@@ -1,5 +1,8 @@
+const config = require('config.js');
 const axios = require('axios');
 const XLSX = require('xlsx');
+
+const { urlApi, tokenApi } = config;
 
 async function actualizarHosts(archivoExcel, urlApi, tokenApi) {
     const workbook = XLSX.readFile(archivoExcel);

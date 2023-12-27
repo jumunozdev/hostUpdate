@@ -1,3 +1,6 @@
 # Carga de datos
 
 **/data/
+
+# Ignora archivos de configuración
+config.js
