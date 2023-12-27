@@ -1,4 +1,4 @@
-#Actualización masiva de host
+# Actualización masiva de host
 
 Este repositorio contiene un conjunto de scripts para actualizar información geográfica en un sistema de monitoreo Zabbix mediante una integración con un archivo Excel. Los scripts están desarrollados en JavaScript y hacen uso de las bibliotecas axios y XLSX.
 
@@ -25,5 +25,5 @@ Se recomienda ejecutar estos scripts en un entorno controlado y realizar pruebas
 
 ¡Listo! Con estos pasos, deberías poder ejecutar y mantener actualizada la información geográfica en tu sistema de monitoreo Zabbix. Si encuentras algún problema o tienes preguntas adicionales, no dudes en consultar la documentación de las bibliotecas utilizadas o en abrir un problema en este repositorio.
 
-## Documentation
+## Documentacion API de Zabbix
 [Documentation](https://www.zabbix.com/documentation/current/es/manual/api)
