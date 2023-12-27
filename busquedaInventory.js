@@ -32,4 +32,4 @@ for (let rowNum = range.s.r + 1; rowNum <= range.e.r; rowNum++) {
 }
 
 // Guarda el archivo Excel actualizado
-XLSX.writeFile(workbook, 'departamentosNuevo.xlsx');
+XLSX.writeFile(workbook, './exports/departamentosNuevo.xlsx');

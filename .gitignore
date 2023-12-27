@@ -1,6 +1,8 @@
 # Carga de datos
 
 **/data/
+**/exports/
+**/node_modules/
 
 # Ignora archivos de configuración
 config.js
